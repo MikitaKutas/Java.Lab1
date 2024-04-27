@@ -1,28 +1,36 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Вводим количество чисел
+        // Ввод количества чисел
         System.out.print("Введите количество чисел: ");
         int n = scanner.nextInt();
 
-        // Создаем массив для хранения чисел
+        // Создание массива для хранения чисел
         int[] numbers = new int[n];
 
-        // Вводим числа
-        System.out.println("Введите " + n + " целых чисел:");
+        // Ввод чисел
+        System.out.println("Введите " + n + " чисел:");
         for (int i = 0; i < n; i++) {
             numbers[i] = scanner.nextInt();
         }
 
-        // Выводим числа, которые делятся на 3 или на 9
-        System.out.println("Числа, которые делятся на 3 или на 9:");
-        for (int number : numbers) {
-            if (number % 3 == 0 || number % 9 == 0) {
-                System.out.print(number + " ");
-            }
+        // Сортировка массива
+        Arrays.sort(numbers);
+
+        // Вывод отсортированных чисел в порядке возрастания
+        System.out.println("Отсортированные числа в порядке возрастания:");
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+
+        // Вывод отсортированных чисел в порядке убывания
+        System.out.println("\nОтсортированные числа в порядке убывания:");
+        for (int i = numbers.length - 1; i >= 0; i--) {
+            System.out.print(numbers[i] + " ");
         }
     }
 }
